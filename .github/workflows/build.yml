@@ -33,6 +33,10 @@ jobs:
       - name: Add Android platform
         run: npx cap add android
 
+      - name: Generate app icons and splash screens
+        run: npx @capacitor/assets generate --android
+        continue-on-error: true
+
       - name: Sync Capacitor
         run: npx cap sync android
 
@@ -52,7 +56,7 @@ jobs:
 
       - name: Create Release
         if: github.ref == 'refs/heads/main'
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@v2
         with:
           tag_name: v1.0.${{ github.run_number }}
           name: Reeves Belt Guard v1.0.${{ github.run_number }}
