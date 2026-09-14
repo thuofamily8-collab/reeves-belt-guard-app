@@ -5,26 +5,26 @@
   "bundledWebRuntime": false,
   "server": {
     "url": "https://www.pajhub.co.ke",
-    "cleartext": true,
-    "allowNavigation": ["www.pajhub.co.ke"]
+    "cleartext": false,
+    "allowNavigation": [
+      "www.pajhub.co.ke",
+      "*.pajhub.co.ke"
+    ]
   },
   "android": {
-    "allowMixedContent": true,
+    "allowMixedContent": false,
     "captureInput": true,
     "webContentsDebuggingEnabled": true
   },
   "plugins": {
     "SplashScreen": {
-      "launchShowDuration": 2000,
+      "launchShowDuration": 1500,
       "backgroundColor": "#0a192f",
       "showSpinner": false
     },
     "StatusBar": {
       "style": "dark",
       "backgroundColor": "#00c6ff"
-    },
-    "Camera": {
-      "permissions": ["camera"]
     }
   }
 }
